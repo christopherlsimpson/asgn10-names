@@ -1,0 +1,9 @@
+alogrigm
+
+Create Array for reading text file
+read first names
+read last names
+output names (concatenated)
+output valid names
+output unique names
+
