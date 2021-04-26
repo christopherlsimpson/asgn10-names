@@ -11,12 +11,14 @@
 	<a href="index.php">Link</a>
 <?php
 
+include("utility-functions.php");
+
 $fileName = "names-short-list.txt";
 
 $lineNumber = 0;
 
 
-// load the array
+// read the file and put it into an array called $fullNames
 $FH = fopen("$fileName", "r");
 $nextName = fgets($FH);
 
@@ -31,9 +33,9 @@ $fullNames[] = trim(substr($nextName, 0, strpos($nextName, " ==")));
 $lineNumber++;
 $nextName = fgets($FH);
 
-
-
 }
+
+dd($fullNames);
 
 // trim the names
 foreach($fullNames as $fullName) {
@@ -69,15 +71,35 @@ echo"<h1>Names - Results</h1>";
 
 echo"<h2>All Names</h2>";
 
-echo"There are " . sizeof($fullNames) . " total names.";
+echo"<p>There are " . sizeof($fullNames) . " total names.</p>";
 
 foreach($fullNames as $fullName) {
 
-	echo"<p>$fullName</p>< /br>";
+	echo"$fullName</br>";
 
 }
 
+echo"<h2>Valid Names</h2>";
 
+echo"<p>There are " . sizeof($validFullNames) . " Valid names.</p>";
+
+
+foreach ($validFullNames as $validFullName){
+	echo"$validFullName</br>";
+
+}
+
+echo"<h2>Unique Names</h2>";
+
+$uniqueValidNames = (array_unique($validFullNames));
+
+echo"<p>There are " . sizeof($uniqueValidNames) . " Unique names.</p>";
+
+foreach($uniqueValidNames as $uniqueValidNames) {
+	echo"$uniqueValidNames</br>";
+
+
+}
 
 
 
