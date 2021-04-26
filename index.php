@@ -8,7 +8,7 @@
 <body>
 	<h1>Names</h1>
 
-	<a href="index.php">Link</a>
+	<a href="../index.php">Back to index</a>
 <?php
 
 include("utility-functions.php");
