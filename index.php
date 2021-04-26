@@ -26,16 +26,16 @@ while(!feof($FH)) {
 
 if ($lineNumber % 2 == 0) {
 
-$fullNames[] = trim(substr($nextName, 0, strpos($nextName, " ==")));
+$fullNames[] = trim(substr($nextName, 0, strpos($nextName, " --")));
 
 }
 
 $lineNumber++;
 $nextName = fgets($FH);
-
 }
 
-dd($fullNames);
+
+
 
 // trim the names
 foreach($fullNames as $fullName) {
